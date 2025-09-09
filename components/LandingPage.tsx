@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingVertical: 60,
     alignItems: 'center',
-    backgroundColor: AppColors.surface,
+    backgroundColor: '#ffffff',
   },
   mainTitle: {
     fontSize: screenWidth > 400 ? 36 : 32,

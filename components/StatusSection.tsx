@@ -157,6 +157,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 16,
     gap: 16,
+    backgroundColor: '#ffffff',
   },
   sectionCard: {
     borderRadius: 12,

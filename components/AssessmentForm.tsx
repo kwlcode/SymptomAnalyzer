@@ -308,7 +308,7 @@ export default function AssessmentForm({ onBackToLanding }: AssessmentFormProps)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#ffffff',
   },
   contentContainer: {
     padding: 16,

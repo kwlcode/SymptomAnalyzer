@@ -17,7 +17,7 @@ export const AppColors = {
   error: '#ef4444',          // Error states
   
   // Neutral colors
-  background: '#f8fafc',     // Light background
+  background: '#ffffff',     // Clean white background
   surface: '#ffffff',        // Card/surface background
   border: '#e2e8f0',         // Border color
   text: '#1f2937',           // Primary text
