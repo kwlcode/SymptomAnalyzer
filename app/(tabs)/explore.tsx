@@ -5,8 +5,15 @@ import SettingsScreen from '@/components/SettingsScreen';
 import StatusSection from '@/components/StatusSection';
 
 export default function SettingsTabScreen() {
+  const lightTheme = {
+    colors: {
+      background: '#ffffff',
+      surface: '#ffffff',
+    },
+  };
+
   return (
-    <PaperProvider>
+    <PaperProvider theme={lightTheme}>
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scrollView}>
           <StatusSection />

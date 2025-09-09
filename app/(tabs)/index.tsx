@@ -15,8 +15,15 @@ export default function HomeScreen() {
     setShowAssessment(false);
   };
 
+  const lightTheme = {
+    colors: {
+      background: '#ffffff',
+      surface: '#ffffff',
+    },
+  };
+
   return (
-    <PaperProvider>
+    <PaperProvider theme={lightTheme}>
       <SafeAreaView style={styles.container}>
         {showAssessment ? (
           <AssessmentForm onBackToLanding={handleBackToLanding} />
