@@ -153,6 +153,7 @@ const styles = StyleSheet.create({
   featuresSection: {
     paddingHorizontal: 24,
     paddingVertical: 40,
+    backgroundColor: '#ffffff',
   },
   featuresGrid: {
     flexDirection: 'row',
@@ -193,7 +194,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingVertical: 40,
     alignItems: 'center',
-    backgroundColor: AppColors.surface,
+    backgroundColor: '#ffffff',
     marginHorizontal: 24,
     borderRadius: 12,
     elevation: 2,

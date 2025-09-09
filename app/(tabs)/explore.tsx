@@ -20,8 +20,10 @@ export default function SettingsTabScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#ffffff',
   },
   scrollView: {
     flex: 1,
+    backgroundColor: '#ffffff',
   },
 });
