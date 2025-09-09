@@ -19,7 +19,11 @@ import { calculateRiskAssessment, getMaxValueForScoreType, getMinValueForScoreTy
 import type { Category, Assessment, RiskAssessment } from '../lib/types';
 import ResultsDisplay from './ResultsDisplay';
 
-export default function AssessmentForm() {
+interface AssessmentFormProps {
+  onBackToLanding?: () => void;
+}
+
+export default function AssessmentForm({ onBackToLanding }: AssessmentFormProps) {
   const [categories, setCategories] = useState<Category[]>([]);
   const [scores, setScores] = useState<number[]>([]);
   const [loading, setLoading] = useState(true);
@@ -153,11 +157,20 @@ export default function AssessmentForm() {
                 Please provide scores for all {categories.length} categories below
               </Paragraph>
             </View>
-            <IconButton
-              icon="help-circle"
-              mode="contained"
-              onPress={() => setShowInstructions(true)}
-            />
+            <View style={styles.headerActions}>
+              {onBackToLanding && (
+                <IconButton
+                  icon="arrow-left"
+                  mode="contained-tonal"
+                  onPress={onBackToLanding}
+                />
+              )}
+              <IconButton
+                icon="help-circle"
+                mode="contained"
+                onPress={() => setShowInstructions(true)}
+              />
+            </View>
           </View>
           
           <View style={styles.progressSection}>
@@ -328,6 +341,10 @@ const styles = StyleSheet.create({
   headerText: {
     flex: 1,
     marginRight: 16,
+  },
+  headerActions: {
+    flexDirection: 'row',
+    gap: 8,
   },
   title: {
     fontSize: 24,

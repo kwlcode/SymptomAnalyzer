@@ -1,8 +1,16 @@
 # Overview
 
-This is a cross-platform diagnostic assessment tool built with React Native and Expo. The application allows healthcare professionals to conduct medical diagnostic assessments using customizable scoring criteria. It features both a mobile React Native application and a web client interface, with a comprehensive backend API for data management.
+This is a comprehensive diagnostic assessment tool built with React Native and Expo. The application allows healthcare professionals to conduct medical diagnostic assessments using customizable scoring criteria. It features a professional landing page and complete assessment workflow with local data persistence using AsyncStorage.
 
-The system enables users to evaluate patients across multiple assessment categories (like severity, impact, duration, frequency, and contributing factors) using configurable scoring scales. It calculates risk assessments using weighted algorithms and provides detailed explanations and recommendations based on the results.
+The system enables users to evaluate patients across multiple assessment categories (like symptom severity, functional impact, duration, frequency, and associated factors) using configurable scoring scales. It calculates risk assessments using weighted algorithms and provides detailed explanations and recommendations based on the results.
+
+## Current Implementation
+
+The app now features:
+- **Professional Landing Page**: Matches the design specification with hero section, feature cards, and call-to-action
+- **Complete Assessment Tool**: Interactive diagnostic form with scoring sliders and comprehensive results
+- **Settings Management**: Full category configuration and management system
+- **Local Data Storage**: AsyncStorage for offline functionality and assessment history
 
 ## User Preferences
 
