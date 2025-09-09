@@ -13,7 +13,7 @@ import {
   Surface,
   IconButton
 } from 'react-native-paper';
-import { Slider } from '@react-native-community/slider';
+import Slider from '@react-native-community/slider';
 import { storage } from '../lib/storage';
 import { calculateRiskAssessment, getMaxValueForScoreType, getMinValueForScoreType } from '../lib/diagnostic-algorithm';
 import type { Category, Assessment, RiskAssessment } from '../lib/types';
