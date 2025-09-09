@@ -1,0 +1,83 @@
+Overview
+This is a full-stack web application for conducting medical diagnostic assessments. The application allows healthcare professionals to evaluate patients using customizable assessment categories and provides automated risk level calculations based on scoring algorithms. Built with React frontend, Express backend, and PostgreSQL database, it follows a modern monorepo structure with shared TypeScript schemas.
+
+System Architecture
+Frontend Architecture
+Framework: React 18 with TypeScript
+Build Tool: Vite for fast development and optimized builds
+UI Library: Shadcn/ui components built on Radix UI primitives
+Styling: Tailwind CSS with CSS variables for theming
+State Management: TanStack Query (React Query) for server state management
+Routing: Wouter for lightweight client-side routing
+Form Handling: React Hook Form with Zod validation
+Backend Architecture
+Runtime: Node.js with Express.js framework
+Language: TypeScript with ESM modules
+Database ORM: Drizzle ORM for type-safe database operations
+Database: PostgreSQL (configured for Neon serverless)
+Session Management: Express sessions with PostgreSQL store
+API Design: RESTful API with JSON responses
+Database Architecture
+ORM: Drizzle ORM with PostgreSQL dialect
+Schema Management: Code-first approach with migrations
+Connection: Neon serverless PostgreSQL for cloud deployment
+Key Components
+Database Schema
+Two main tables define the data structure:
+
+Categories Table: Stores assessment criteria
+
+Configurable scoring types (1-10, 1-5, 0-100, 0-1)
+Ordered categories for consistent assessment flow
+Descriptive text for clear user guidance
+Assessments Table: Stores completed evaluations
+
+Array of scores corresponding to categories
+Calculated total scores and risk levels
+Timestamp tracking for historical analysis
+Core Features
+Assessment Form: Interactive scoring interface with dynamic sliders
+Results Display: Visual risk assessment with color-coded indicators
+Settings Management: Administrative interface for category configuration
+Risk Algorithm: Weighted scoring system with configurable thresholds
+Storage Strategy
+The application implements a flexible storage interface pattern:
+
+Database storage using PostgreSQL for production data persistence
+Memory storage available as fallback option
+Automatic database initialization with default assessment categories
+Data Flow
+Assessment Creation:
+
+User selects scores for each category via interactive sliders
+Frontend validates input and calculates preliminary results
+Assessment data submitted to backend via REST API
+Backend processes scores through diagnostic algorithm
+Results stored in database with timestamp
+Category Management:
+
+Administrative users can modify assessment categories
+Changes propagate immediately to active assessment forms
+Reset functionality restores default medical categories
+Result Processing:
+
+Weighted scoring algorithm considers symptom severity, functional impact, duration, frequency, and risk factors
+Risk levels calculated: Low, Moderate, High, Critical
+Color-coded visual indicators and actionable recommendations generated
+External Dependencies
+Core Dependencies
+Frontend: React ecosystem (React Query, Hook Form, Radix UI)
+Backend: Express.js with TypeScript support
+Database: Drizzle ORM with Neon PostgreSQL adapter
+Validation: Zod for runtime type checking
+Styling: Tailwind CSS with component variants
+Development Tools
+Build: Vite with React plugin and runtime error overlay
+TypeScript: Strict configuration with path mapping
+Linting: ESM modules with proper import/export patterns
+Deployment Strategy
+Replit Configuration
+Environment: Node.js 20 with PostgreSQL 16 module
+Development: Hot reload with Vite dev server on port 5000
+Production: Optimized build with Express static serving
+Database: Automatic PostgreSQL provisioning via environment variables
