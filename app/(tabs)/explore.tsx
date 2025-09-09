@@ -15,7 +15,7 @@ export default function SettingsTabScreen() {
   return (
     <PaperProvider theme={lightTheme}>
       <SafeAreaView style={styles.container}>
-        <ScrollView style={styles.scrollView}>
+        <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
           <StatusSection />
           <SettingsScreen />
         </ScrollView>

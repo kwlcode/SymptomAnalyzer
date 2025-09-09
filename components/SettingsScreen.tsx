@@ -193,7 +193,7 @@ export default function SettingsScreen() {
           <View style={styles.actionButtons}>
             <Button 
               mode="outlined" 
-              onPress={() => setShowAddDialog(true)}
+              onPress={() => Alert.alert('Coming Soon', 'Category management will be available in a future update')}
               style={styles.addButton}
               icon="plus"
               textColor={AppColors.text}
@@ -244,14 +244,14 @@ export default function SettingsScreen() {
                       icon="pencil"
                       mode="contained-tonal"
                       size={20}
-                      onPress={() => openEditDialog(category)}
+                      onPress={() => Alert.alert('Coming Soon', 'Category editing will be available in a future update')}
                     />
                     <IconButton
                       icon="delete"
                       mode="contained-tonal"
                       size={20}
                       iconColor="#F44336"
-                      onPress={() => handleDeleteCategory(category)}
+                      onPress={() => Alert.alert('Coming Soon', 'Category deletion will be available in a future update')}
                     />
                   </View>
                 </View>
@@ -262,101 +262,7 @@ export default function SettingsScreen() {
         </Card.Content>
       </Card>
 
-      {/* Add Category Dialog */}
-      <Portal>
-        <Dialog visible={showAddDialog} onDismiss={() => setShowAddDialog(false)}>
-          <Dialog.Title>Add New Category</Dialog.Title>
-          <Dialog.Content>
-            <TextInput
-              label="Category Name"
-              value={newCategory.name}
-              onChangeText={(text) => setNewCategory({...newCategory, name: text})}
-              style={styles.input}
-              mode="outlined"
-            />
-            <TextInput
-              label="Description"
-              value={newCategory.description}
-              onChangeText={(text) => setNewCategory({...newCategory, description: text})}
-              style={styles.input}
-              mode="outlined"
-              multiline
-              numberOfLines={3}
-            />
-            <Text style={styles.inputLabel}>Score Type</Text>
-            <View style={styles.scoreTypeContainer}>
-              {scoreTypeOptions.map((option) => (
-                <Chip
-                  key={option.value}
-                  mode={newCategory.scoreType === option.value ? 'flat' : 'outlined'}
-                  selected={newCategory.scoreType === option.value}
-                  onPress={() => setNewCategory({...newCategory, scoreType: option.value})}
-                  style={styles.scoreTypeChip}
-                >
-                  {option.label}
-                </Chip>
-              ))}
-            </View>
-          </Dialog.Content>
-          <Dialog.Actions>
-            <Button onPress={() => {
-              setShowAddDialog(false);
-              resetNewCategory();
-            }}>Cancel</Button>
-            <Button onPress={handleAddCategory}>Add</Button>
-          </Dialog.Actions>
-        </Dialog>
-      </Portal>
 
-      {/* Edit Category Dialog */}
-      <Portal>
-        <Dialog visible={showEditDialog} onDismiss={() => setShowEditDialog(false)}>
-          <Dialog.Title>Edit Category</Dialog.Title>
-          <Dialog.Content>
-            {editingCategory && (
-              <>
-                <TextInput
-                  label="Category Name"
-                  value={editingCategory.name}
-                  onChangeText={(text) => setEditingCategory({...editingCategory, name: text})}
-                  style={styles.input}
-                  mode="outlined"
-                />
-                <TextInput
-                  label="Description"
-                  value={editingCategory.description}
-                  onChangeText={(text) => setEditingCategory({...editingCategory, description: text})}
-                  style={styles.input}
-                  mode="outlined"
-                  multiline
-                  numberOfLines={3}
-                />
-                <Text style={styles.inputLabel}>Score Type</Text>
-                <View style={styles.scoreTypeContainer}>
-                  {scoreTypeOptions.map((option) => (
-                    <Chip
-                      key={option.value}
-                      mode={editingCategory.scoreType === option.value ? 'flat' : 'outlined'}
-                      selected={editingCategory.scoreType === option.value}
-                      onPress={() => setEditingCategory({...editingCategory, scoreType: option.value})}
-                      style={styles.scoreTypeChip}
-                    >
-                      {option.label}
-                    </Chip>
-                  ))}
-                </View>
-              </>
-            )}
-          </Dialog.Content>
-          <Dialog.Actions>
-            <Button onPress={() => {
-              setShowEditDialog(false);
-              setEditingCategory(null);
-            }}>Cancel</Button>
-            <Button onPress={handleEditCategory}>Save</Button>
-          </Dialog.Actions>
-        </Dialog>
-      </Portal>
     </ScrollView>
   );
 }
