@@ -1,13 +1,17 @@
 import React from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import SettingsScreen from '@/components/SettingsScreen';
+import StatusSection from '@/components/StatusSection';
 
 export default function SettingsTabScreen() {
   return (
     <PaperProvider>
       <SafeAreaView style={styles.container}>
-        <SettingsScreen />
+        <ScrollView style={styles.scrollView}>
+          <StatusSection />
+          <SettingsScreen />
+        </ScrollView>
       </SafeAreaView>
     </PaperProvider>
   );
@@ -15,6 +19,9 @@ export default function SettingsTabScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+  },
+  scrollView: {
     flex: 1,
   },
 });

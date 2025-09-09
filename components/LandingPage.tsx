@@ -9,6 +9,7 @@ import {
   Text
 } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { AppColors } from '../lib/theme';
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -22,25 +23,25 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
       icon: 'brain',
       title: 'AI-Powered',
       description: 'Advanced AI analysis using GPT-4o for accurate diagnostic insights',
-      color: '#4285F4'
+      color: AppColors.secondary
     },
     {
       icon: 'pulse',
       title: 'Real-time Results',
       description: 'Get instant risk assessments and personalized recommendations',
-      color: '#34A853'
+      color: AppColors.green
     },
     {
       icon: 'shield-check',
       title: 'Secure & Private',
       description: 'Your data is protected with enterprise-grade security',
-      color: '#9C27B0'
+      color: AppColors.purple
     },
     {
       icon: 'account-group',
       title: 'User-Specific',
       description: 'Personalized categories and assessment history for each user',
-      color: '#FF5722'
+      color: AppColors.orange
     }
   ];
 
@@ -108,7 +109,7 @@ export default function LandingPage({ onGetStarted }: LandingPageProps) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f8f9fa',
+    backgroundColor: AppColors.background,
   },
   contentContainer: {
     paddingBottom: 40,
@@ -117,26 +118,26 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingVertical: 60,
     alignItems: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: AppColors.surface,
   },
   mainTitle: {
     fontSize: screenWidth > 400 ? 36 : 32,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#1a1a1a',
+    color: AppColors.text,
     marginBottom: 16,
     lineHeight: screenWidth > 400 ? 44 : 40,
   },
   subtitle: {
     fontSize: 16,
     textAlign: 'center',
-    color: '#6b7280',
+    color: AppColors.textSecondary,
     marginBottom: 32,
     lineHeight: 24,
     maxWidth: 500,
   },
   getStartedButton: {
-    backgroundColor: '#4285F4',
+    backgroundColor: AppColors.green,
     borderRadius: 8,
     elevation: 2,
   },
@@ -164,7 +165,7 @@ const styles = StyleSheet.create({
     minWidth: 160,
     borderRadius: 12,
     elevation: 2,
-    backgroundColor: '#ffffff',
+    backgroundColor: AppColors.surface,
     marginBottom: 16,
   },
   featureContent: {
@@ -179,20 +180,20 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#1a1a1a',
+    color: AppColors.text,
     marginBottom: 12,
   },
   featureDescription: {
     fontSize: 14,
     textAlign: 'center',
-    color: '#6b7280',
+    color: AppColors.textSecondary,
     lineHeight: 20,
   },
   ctaSection: {
     paddingHorizontal: 24,
     paddingVertical: 40,
     alignItems: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: AppColors.surface,
     marginHorizontal: 24,
     borderRadius: 12,
     elevation: 2,
@@ -201,18 +202,18 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     textAlign: 'center',
-    color: '#1a1a1a',
+    color: AppColors.text,
     marginBottom: 12,
   },
   ctaSubtitle: {
     fontSize: 16,
     textAlign: 'center',
-    color: '#6b7280',
+    color: AppColors.textSecondary,
     marginBottom: 24,
     lineHeight: 22,
   },
   signInButton: {
-    backgroundColor: '#4285F4',
+    backgroundColor: AppColors.green,
     borderRadius: 8,
     elevation: 2,
   },

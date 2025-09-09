@@ -17,6 +17,7 @@ import {
 } from 'react-native-paper';
 import { storage } from '../lib/storage';
 import type { Category, InsertCategory } from '../lib/types';
+import { AppColors, ButtonStyles } from '../lib/theme';
 
 export default function SettingsScreen() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -191,18 +192,20 @@ export default function SettingsScreen() {
         <Card.Content>
           <View style={styles.actionButtons}>
             <Button 
-              mode="contained" 
+              mode="outlined" 
               onPress={() => setShowAddDialog(true)}
               style={styles.addButton}
               icon="plus"
+              textColor={AppColors.text}
             >
-              Add Category
+              Add New Category
             </Button>
             <Button 
               mode="outlined" 
               onPress={handleResetToDefaults}
               style={styles.resetButton}
               icon="refresh"
+              textColor={AppColors.text}
             >
               Reset to Defaults
             </Button>
@@ -400,9 +403,11 @@ const styles = StyleSheet.create({
   },
   addButton: {
     flex: 1,
+    ...ButtonStyles.dashed,
   },
   resetButton: {
     flex: 1,
+    ...ButtonStyles.secondary,
   },
   categoriesCard: {
     marginBottom: 16,
