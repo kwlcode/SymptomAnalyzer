@@ -2,8 +2,7 @@
   "version": 2,
   "functions": {
     "backend/index.ts": {
-      "runtime": "@vercel/node",
-      "includeFiles": "backend/**"
+      "maxDuration": 15
     }
   },
   "rewrites": [
@@ -13,7 +12,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/frontend/dist/$1"
+      "destination": "frontend/dist/$1"
     }
   ]
 }
