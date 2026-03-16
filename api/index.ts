@@ -1,15 +1,12 @@
-try {
-  const { app } = require("../backend/index");
-  module.exports = app;
-} catch (e: any) {
-  const express = require("express");
-  const fallback = express();
-  fallback.all("*", (req: any, res: any) => {
+export default async (req: any, res: any) => {
+  try {
+    const { app } = await import("../backend/index");
+    return app(req, res);
+  } catch (e: any) {
     res.status(500).json({
-      error: e.toString(),
-      stack: e.stack,
-      message: "This is a diagnostic fallback app catch-all"
+      error: "Cold Start Failure",
+      message: e.toString(),
+      stack: e.stack
     });
-  });
-  module.exports = fallback;
-}
+  }
+};

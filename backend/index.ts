@@ -40,34 +40,25 @@ app.use((req, _res, next) => {
 });
 
 // ── Routes ─────────────────────────────────────────────────────────────────────
-const initServer = async () => {
-  const server = await registerRoutes(app);
+registerRoutes(app);
 
-  // ── Global error handler ──────────────────────────────────────────────────────
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || 'Internal Server Error';
-    console.error('Unhandled error:', err);
-    res.status(status).json({ message });
-  });
-
-  return server;
-};
+// ── Global error handler ──────────────────────────────────────────────────────
+app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+  const status = err.status || err.statusCode || 500;
+  const message = err.message || 'Internal Server Error';
+  console.error('Unhandled error:', err);
+  res.status(status).json({ message });
+});
 
 // Start server only if not in a serverless environment
 if (process.env.NODE_ENV !== 'production' || process.env.VERCEL !== '1') {
-  initServer().then(server => {
-    const PORT = parseInt(process.env.PORT || '5001');
-    server.listen({ port: PORT, host: '0.0.0.0' }, () => {
-      console.log(`🚀 Backend API running on http://localhost:${PORT}`);
-    });
-  }).catch(err => {
-    console.error('Failed to start server:', err);
+  const http = require('http');
+  const server = http.createServer(app);
+  const PORT = env.PORT || 5001;
+  server.listen({ port: PORT, host: '0.0.0.0' }, () => {
+    console.log(`🚀 Backend API running on http://localhost:${PORT}`);
   });
 }
-
-// Ensure routes are registered for Vercel
-initServer();
 
 export default app;
 export { app };

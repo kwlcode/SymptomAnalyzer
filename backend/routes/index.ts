@@ -27,7 +27,7 @@ import {
 } from '../db/tables';
 import type { Category } from '../db/tables';
 
-export async function registerRoutes(app: Express): Promise<Server> {
+export function registerRoutes(app: Express): void {
   // ── Usage ────────────────────────────────────────────────────────────────────
   app.get('/api/usage', isAuthenticated, async (req: any, res) => {
     try {
@@ -252,7 +252,4 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // ── Payments ─────────────────────────────────────────────────────────────────
   registerPaymentRoutes(app);
-
-  const httpServer = createServer(app);
-  return httpServer;
 }
