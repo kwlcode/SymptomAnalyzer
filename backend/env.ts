@@ -31,11 +31,11 @@ export const env = {
 
 // Check critical variables immediately
 if (!env.DATABASE_URL) {
-  console.error(`❌ DATABASE_URL is missing from ${envPath}`);
+  console.error(`❌ DATABASE_URL is missing from environment variables`);
   process.exit(1);
 }
 
 if (!env.CLERK_SECRET_KEY) {
-  console.error(`❌ CLERK_SECRET_KEY is missing from ${envPath}`);
+  console.error(`❌ CLERK_SECRET_KEY is missing from environment variables`);
   process.exit(1);
 }
