@@ -17,15 +17,15 @@ import { generateAIDiagnosticAnalysis } from '../services/ai-diagnostic';
 import { sendReportNotification } from '../services/email';
 import { registerPaymentRoutes } from './payments';
 import { db } from '../db/client';
-import { categories } from '../db/schema';
+import { categories } from '../db/tables';
 import { eq } from 'drizzle-orm';
 import {
   insertCategorySchema,
   updateCategorySchema,
   insertAssessmentSchema,
   insertReportSchema,
-} from '../db/schema';
-import type { Category } from '../db/schema';
+} from '../db/tables';
+import type { Category } from '../db/tables';
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // ── Usage ────────────────────────────────────────────────────────────────────

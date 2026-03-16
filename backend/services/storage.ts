@@ -1,5 +1,5 @@
-import { users, categories, assessments, reports, payments, subscriptions } from "../db/schema";
-import type { User, UpsertUser, Category, InsertCategory, UpdateCategory, Assessment, InsertAssessment, Report, InsertReport, Payment, InsertPayment, Subscription, InsertSubscription } from "../db/schema";
+import { users, categories, assessments, reports, payments, subscriptions } from "../db/tables";
+import type { User, UpsertUser, Category, InsertCategory, UpdateCategory, Assessment, InsertAssessment, Report, InsertReport, Payment, InsertPayment, Subscription, InsertSubscription } from "../db/tables";
 import { db } from "../db/client";
 import { eq, desc } from "drizzle-orm";
 

@@ -1,0 +1,41 @@
+Retrieving project…
+Resolving deployment "symptomanalyzer-ios.vercel.app"
+Streaming logs for deployment dpl_2FQHREdEbtazcEe3kfxL1AtQUiuh starting from 18:57:49.96
+
+waiting for new logs...
+18:57:45.84  🚫  HEAD  ---  symptomanalyzer-ios.vercel.app  ƒ  /api/categories
+------------------------------------------------------------------------------
+Cannot find module '../db/schema'
+Require stack:
+- /var/task/backend/services/storage.js
+- /var/task/backend/routes/index.js
+- /var/task/backend/index.js
+- /var/task/api/index.js
+Did you forget to add it to "dependencies" in `package.json`?
+Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+
+waiting for new logs...
+18:57:50.18  🚫  HEAD  ---  symptomanalyzer-ios.vercel.app  ƒ  /api/categories
+------------------------------------------------------------------------------
+Cannot find module '../db/schema'
+Require stack:
+- /var/task/backend/services/storage.js
+- /var/task/backend/routes/index.js
+- /var/task/backend/index.js
+- /var/task/api/index.js
+Did you forget to add it to "dependencies" in `package.json`?
+Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+
+waiting for new logs...
+18:57:54.57  🚫  HEAD  ---  symptomanalyzer-ios.vercel.app  ƒ  /api/categories
+------------------------------------------------------------------------------
+Cannot find module '../db/schema'
+Require stack:
+- /var/task/backend/services/storage.js
+- /var/task/backend/routes/index.js
+- /var/task/backend/index.js
+- /var/task/api/index.js
+Did you forget to add it to "dependencies" in `package.json`?
+Node.js process exited with exit status: 1. The logs above can help with debugging the issue.
+
+waiting for new logs...

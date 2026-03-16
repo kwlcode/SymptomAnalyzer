@@ -1,5 +1,5 @@
 import { db } from "../db/client";
-import { users } from "../db/schema";
+import { users } from "../db/tables";
 import { eq, sql } from "drizzle-orm";
 
 export interface UsageLimits {

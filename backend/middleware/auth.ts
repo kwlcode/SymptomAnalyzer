@@ -8,7 +8,7 @@
 import type { Express, Request, Response, NextFunction, RequestHandler } from 'express';
 import { getAuth } from '@clerk/express';
 import { db } from '../db/client';
-import { users } from '../db/schema';
+import { users } from '../db/tables';
 import { eq } from 'drizzle-orm';
 
 // ─── Types ────────────────────────────────────────────────────────────────────

@@ -1,6 +1,6 @@
 import { env } from '../env';
 import OpenAI from "openai";
-import type { Category } from "../db/schema";
+import type { Category } from "../db/tables";
 
 // Lazy-loaded OpenAI client
 let openai: OpenAI | null = null;

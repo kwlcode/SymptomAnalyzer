@@ -6,7 +6,7 @@
 
 import { env } from '../env';
 import { Resend } from 'resend';
-import type { Report } from '../db/schema';
+import type { Report } from '../db/tables';
 
 const resend = env.RESEND_API_KEY ? new Resend(env.RESEND_API_KEY) : null;
 
