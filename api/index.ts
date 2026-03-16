@@ -1,2 +1,2 @@
-import app from "../backend/index";
-export default app;
+import { app } from "../backend/index";
+module.exports = app;
