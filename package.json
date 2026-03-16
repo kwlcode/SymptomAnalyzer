@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "vercel-build": "npx vite build frontend"
+    "vercel-build": "cd frontend && npm install --legacy-peer-deps && npm run build"
   },
   "jest": {
     "preset": "jest-expo"
