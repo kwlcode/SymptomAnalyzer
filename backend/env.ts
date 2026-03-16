@@ -1,14 +1,15 @@
 import * as dotenv from 'dotenv';
 import path from 'path';
-import { fileURLToPath } from 'url';
 
-// Support both ESM and CJS for path resolution
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Load .env relative to this file
-const envPath = path.resolve(__dirname, '../.env');
-dotenv.config({ path: envPath });
+// Allow local loading of .env, but gracefully ignore in Vercel
+// Avoid import.meta.url as it crashes Vercel's Serverless CommonJS build
+if (process.env.VERCEL !== '1') {
+  const envPath = path.resolve(process.cwd(), '../.env');
+  dotenv.config({ path: envPath });
+} else {
+  // In Vercel, env vars are automatically loaded
+  dotenv.config();
+}
 
 /**
  * Validated environment variables with defaults or lazy error handling.
