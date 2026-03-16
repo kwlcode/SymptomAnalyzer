@@ -21,7 +21,7 @@ export const sessions = pgTable(
     sess: jsonb("sess").notNull(),
     expire: timestamp("expire").notNull(),
   },
-  (table: any) => [index("IDX_session_expire").on(table.expire)],
+  (table) => [index("IDX_session_expire").on(table.expire)],
 );
 
 // User table — supports both email/password (passwordHash) and future OAuth providers.
@@ -78,27 +78,27 @@ export const reports = pgTable("reports", {
 });
 
 // Relations
-export const usersRelations = relations(users, ({ many }: any) => ({
+export const usersRelations = relations(users, ({ many }) => ({
   categories: many(categories),
   assessments: many(assessments),
   reports: many(reports),
 }));
 
-export const categoriesRelations = relations(categories, ({ one }: any) => ({
+export const categoriesRelations = relations(categories, ({ one }) => ({
   user: one(users, {
     fields: [categories.userId],
     references: [users.id],
   }),
 }));
 
-export const assessmentsRelations = relations(assessments, ({ one }: any) => ({
+export const assessmentsRelations = relations(assessments, ({ one }) => ({
   user: one(users, {
     fields: [assessments.userId],
     references: [users.id],
   }),
 }));
 
-export const reportsRelations = relations(reports, ({ one }: any) => ({
+export const reportsRelations = relations(reports, ({ one }) => ({
   user: one(users, {
     fields: [reports.userId],
     references: [users.id],

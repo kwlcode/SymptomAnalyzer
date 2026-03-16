@@ -1,0 +1,44 @@
+{
+  "name": "symptom-analyzer-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SymptomAnalyzer API backend — Express + TypeScript + Drizzle ORM",
+  "scripts": {
+    "dev": "tsx watch index.ts",
+    "build": "tsc --project tsconfig.json",
+    "start": "node dist/index.js",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@clerk/backend": "^3.2.0",
+    "@clerk/express": "^2.0.4",
+    "@neondatabase/serverless": "^0.10.4",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.39.1",
+    "drizzle-zod": "^0.7.0",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "openai": "^4.89.0",
+    "resend": "^6.9.3",
+    "uuid": "^11.1.0",
+    "ws": "^8.18.0",
+    "zod": "^3.25.76",
+    "zod-validation-error": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^22.14.1",
+    "@types/uuid": "^10.0.0",
+    "@types/ws": "^8.5.14",
+    "drizzle-kit": "^0.30.4",
+    "tsx": "4.7.1",
+    "typescript": "^5.8.3"
+  }
+}

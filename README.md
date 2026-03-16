@@ -1,50 +1,49 @@
-# Welcome to your Expo app 👋
+# SymptomAnalyzer
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A medical diagnostic assessment tool for healthcare professionals.
 
-## Get started
+## What It Does
 
-1. Install dependencies
+Users score patients across configurable categories (symptom severity, functional impact, duration, frequency, associated factors) using 1–10 sliders. The system runs scores through **OpenAI GPT-4o** and returns a structured risk assessment with explanations and recommendations.
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- 🩺 AI-powered diagnostic analysis (GPT-4o)
+- 📊 Configurable assessment categories
+- 🔒 Freemium model (2 free/month → paid unlimited)
+- 💳 Subscription payments via Paystack
+- 📧 Email notifications via SendGrid
+- 📱 React Native mobile app (Expo)
+- 🌐 Web app (React + Vite)
 
-   ```bash
-   npx expo start
-   ```
+## Stack
 
-In the output, you'll find options to open the app in a
+| Layer | Technology |
+|-------|-----------|
+| Mobile | Expo / React Native |
+| Web Frontend | React + Vite + Shadcn/UI + Tailwind CSS |
+| Backend | Node.js + Express + TypeScript |
+| Database | PostgreSQL (Neon) + Drizzle ORM |
+| AI | OpenAI GPT-4o |
+| Payments | Paystack |
+| Email | SendGrid |
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Setup
 
 ```bash
-npm run reset-project
+cp .env.example .env
+# Fill in your environment variables
+
+npm install
+npx drizzle-kit migrate
+npm run dev
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Environment Variables
 
-## Learn more
+See `.env.example` for all required variables.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Documentation
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- [Architecture Map](docs/architecture_map.md)
+- [Rebuild Guide](docs/rebuild_guide.md)

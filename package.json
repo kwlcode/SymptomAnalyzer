@@ -9,7 +9,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "build": "cd backend && npm install --legacy-peer-deps && npm run build && cd ../frontend && npm install --legacy-peer-deps && npm run build",
+    "vercel-build": "npm run build"
   },
   "jest": {
     "preset": "jest-expo"
@@ -23,6 +25,9 @@
     "@react-navigation/bottom-tabs": "^7.3.10",
     "@react-navigation/elements": "^2.3.8",
     "@react-navigation/native": "^7.1.6",
+    "date-fns": "^4.1.0",
+    "drizzle-orm": "^0.45.1",
+    "drizzle-zod": "^0.8.3",
     "expo": "~53.0.9",
     "expo-blur": "~14.1.4",
     "expo-constants": "~17.1.6",
@@ -38,6 +43,7 @@
     "expo-system-ui": "~5.0.7",
     "expo-web-browser": "~14.1.6",
     "react": "19.0.0",
+    "react-day-picker": "^9.14.0",
     "react-dom": "19.0.0",
     "react-hook-form": "^7.62.0",
     "react-native": "0.79.2",
