@@ -107,24 +107,24 @@ export const reportsRelations = relations(reports, ({ one }: any) => ({
 
 export const insertCategorySchema = createInsertSchema(categories).omit({
   id: true,
-});
+}) as any;
 
 export const updateCategorySchema = createInsertSchema(categories).omit({
   id: true,
   userId: true,
-}).partial();
+}).partial() as any;
 
 export const insertAssessmentSchema = createInsertSchema(assessments).omit({
   id: true,
   createdAt: true,
-});
+}) as any;
 
 export const insertReportSchema = createInsertSchema(reports).omit({
   id: true,
   createdAt: true,
   updatedAt: true,
   status: true,
-});
+}) as any;
 
 export type UpsertUser = typeof users.$inferInsert;
 export type User = typeof users.$inferSelect;

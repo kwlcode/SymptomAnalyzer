@@ -20,7 +20,7 @@ export default function Assessment() {
   });
 
   const downloadHistoricalAssessment = (assessment: AssessmentType, format: 'txt' | 'html') => {
-    const timestamp = new Date(assessment.createdAt).toLocaleString();
+    const timestamp = assessment.createdAt ? new Date(assessment.createdAt).toLocaleString() : 'Date Unknown';
     const content = `
 DIAGNOSTIC ASSESSMENT REPORT (Historical)
 Original Assessment Date: ${timestamp}
@@ -112,7 +112,7 @@ For medical decisions, please consult with a healthcare professional.
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `historical-assessment-${assessment.id}-${new Date(assessment.createdAt).toISOString().split('T')[0]}.html`;
+      a.download = `historical-assessment-${assessment.id}-${assessment.createdAt ? new Date(assessment.createdAt).toISOString().split('T')[0] : 'unknown'}.html`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -122,7 +122,7 @@ For medical decisions, please consult with a healthcare professional.
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `historical-assessment-${assessment.id}-${new Date(assessment.createdAt).toISOString().split('T')[0]}.txt`;
+      a.download = `historical-assessment-${assessment.id}-${assessment.createdAt ? new Date(assessment.createdAt).toISOString().split('T')[0] : 'unknown'}.txt`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -168,8 +168,8 @@ For medical decisions, please consult with a healthcare professional.
                     <div className="flex items-center space-x-3">
                       <Calendar className="h-4 w-4 text-gray-500" />
                       <span className="text-sm text-gray-600">
-                        {new Date(assessment.createdAt).toLocaleDateString()} at{' '}
-                        {new Date(assessment.createdAt).toLocaleTimeString()}
+                        {assessment.createdAt ? new Date(assessment.createdAt).toLocaleDateString() : 'N/A'} at{' '}
+                        {assessment.createdAt ? new Date(assessment.createdAt).toLocaleTimeString() : 'N/A'}
                       </span>
                     </div>
                     <Badge 

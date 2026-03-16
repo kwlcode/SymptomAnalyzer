@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
-import { apiRequest } from '@/lib/queryClient';
 import { Star, Crown, Check, CreditCard } from 'lucide-react';
 
 interface PaymentModalProps {
@@ -84,7 +83,6 @@ export function PaymentModal({ open, onOpenChange }: PaymentModalProps) {
   const [selectedPlan, setSelectedPlan] = useState<string>('premium');
   const [selectedCurrency, setSelectedCurrency] = useState<string>('USD');
   const { toast } = useToast();
-  const queryClient = useQueryClient();
 
   const { data: currentSubscription } = useQuery<{
     subscription?: {

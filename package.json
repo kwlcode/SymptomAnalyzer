@@ -10,9 +10,13 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "build": "cd backend && npm install --legacy-peer-deps && npm run build && cd ../frontend && npm install --legacy-peer-deps && npm run build",
+    "build": "npm run build --workspaces",
     "vercel-build": "npm run build"
   },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
   "jest": {
     "preset": "jest-expo"
   },
