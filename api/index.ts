@@ -1,5 +1,12 @@
-import { app } from "../backend/index";
+import express from 'express';
+const app = express();
 
-export default function handler(req: any, res: any) {
-  return app(req, res);
-}
+app.get('/api/categories', (req, res) => {
+  res.json({
+    status: 'success',
+    message: 'Simplified API is working',
+    timestamp: new Date().toISOString()
+  });
+});
+
+export default app;
